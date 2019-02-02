@@ -120,7 +120,7 @@ describe('Blog Posts', function(){
 						expect(res.body.content).to.be.a('string');
 						expect(res.body.author).to.be.a('string');
 						expect(res.body.created).to.be.a('string');
-						return BlogPost.find(res.body.id);
+						return BlogPost.findById(res.body.id);
 				})
 				.then(function(post){
 					expect(post.title).to.equal(newPost.title);
